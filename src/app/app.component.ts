@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SupportAuth';
+
+  public mail:string
+  public password:string
+
+  constructor(private userService:UserService){}
+
+  onSubmit(){
+    // On 
+    this.userService.checkUser(this.mail, this.password)
+  }
 }
